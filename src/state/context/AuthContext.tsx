@@ -1,4 +1,4 @@
-import { useReducer, useMemo, createContext, use, useCallback } from "react";
+import { useReducer, useMemo, createContext, useCallback } from "react";
 import type { AuthContextValue } from "../../types/auth";
 import {
   authReducer,
@@ -14,7 +14,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     dispatch({ type: "LOGIN_REQUEST" });
 
     try {
-      const request = await new Promise<{ ok: boolean }>((res, rej) => {
+      const request = await new Promise<{ ok: boolean }>((res) => {
         setTimeout(() => {
           res({ ok: true });
         }, 500);
